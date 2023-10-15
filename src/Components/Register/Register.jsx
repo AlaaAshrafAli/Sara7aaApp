@@ -45,6 +45,7 @@ export default function Register() {
       .oneOf([Yup.ref("password")], "rePassword doesn't match password"),
     age: Yup.number().positive().integer().required("age is required"),
   });
+
   let formik = useFormik({
     initialValues: {
       name: "",
@@ -132,6 +133,7 @@ export default function Register() {
                 ""
               )}
             </div>
+
             <div className="form-group mb-3">
               <label htmlFor="rePassword" className=" fw-bolder">
                 RePassword
@@ -174,6 +176,7 @@ export default function Register() {
                 ""
               )}
             </div>
+
             <button type="submit" className="btn btn-dark my-4 w-100 rounded">
               {isLoading ? (
                 <i className="fa fa-spin fa-spinner"></i>
